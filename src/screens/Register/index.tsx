@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import { Alert, Keyboard, Modal, TouchableWithoutFeedback } from 'react-native';
+import { Alert, Keyboard, Modal } from 'react-native';
+
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 import { useForm } from 'react-hook-form';
 
@@ -87,7 +89,11 @@ export function Register(){
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>      
+    <TouchableWithoutFeedback 
+      onPress={Keyboard.dismiss}
+      containerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+    >      
       <Container>
         <Header>
           <Title>Cadastro</Title>

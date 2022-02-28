@@ -8,6 +8,8 @@ import { Feather } from '@expo/vector-icons';
 
 import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
 
+import { BorderlessButton } from 'react-native-gesture-handler';
+
 import { DataListProps } from './';
 
 export const Container = styled.View`
@@ -86,12 +88,13 @@ export const Title = styled.Text`
 `;
 
 export const TransactionList = styled(
-  FlatList as new (props: FlatListProps<DataListProps>) => FlatList<DataListProps>
-).attrs({
-  showsVerticalScrollIndicator: false,
-  contentContainerStyle: {
-    padding: getBottomSpace()
-  }
-})`
-
+    FlatList as new (props: FlatListProps<DataListProps>) => FlatList<DataListProps>
+  ).attrs({
+    showsVerticalScrollIndicator: false,
+    contentContainerStyle: {
+      padding: getBottomSpace()
+    }
+  })`
 `;
+
+export const LogoutButton = styled(BorderlessButton)``;

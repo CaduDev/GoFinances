@@ -4,6 +4,8 @@ import { RFValue } from 'react-native-responsive-fontsize';
 
 import { Feather } from '@expo/vector-icons';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 interface CategoryProps {
   isActive: boolean;
 }
@@ -53,7 +55,7 @@ export const Separator = styled.View`
   background-color: ${({ theme }) => theme.colors.text};
 `;
 
-export const Footer = styled.View`
+export const Footer = styled(GestureHandlerRootView)`
   width: 100%;
   padding: 24px;
 `;
