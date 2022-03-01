@@ -126,8 +126,6 @@ export function Register(){
 
       navigation.navigate('Listagem');
     } catch(err) {
-      console.log(err);
-
       Alert.alert("Atenção", "Não foi possivel salvar!");
     }
   }

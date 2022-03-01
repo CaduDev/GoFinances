@@ -133,7 +133,6 @@ export function Resume(){
       <Header>
         <Title>Resumo por categoria</Title>
       </Header>
-      {console.log(useBottomTabBarHeight())}
       <Content 
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
