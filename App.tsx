@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { StatusBar } from 'react-native';
+
 import { ThemeProvider } from 'styled-components';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -35,9 +37,14 @@ export default function App() {
   }
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>      
+    <GestureHandlerRootView style={{ flex: 1 }}> 
       <ThemeProvider theme={theme}>
         <NavigationContainer>
+          <StatusBar 
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent
+          />     
           <AppRoutes />
         </NavigationContainer>
       </ThemeProvider>
