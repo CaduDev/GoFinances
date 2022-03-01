@@ -98,3 +98,14 @@ export const TransactionList = styled(
 `;
 
 export const LogoutButton = styled(BorderlessButton)``;
+
+export const LoadModal = styled.Modal`
+  flex: 1;
+`;
+
+export const LoadContainer = styled.View`
+  background-color: ${({ theme }) => theme.colors.background};
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;

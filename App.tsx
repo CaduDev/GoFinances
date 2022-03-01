@@ -19,6 +19,10 @@ import theme from './src/global/styles/theme';
 
 import { AppRoutes } from './src/routes/app.routes';
 
+import 'intl';
+
+import 'intl/locale-data/jsonp/pt-BR';
+
 export default function App() {
   const [fontLoaded] = useFonts({
     Poppins_400Regular,
