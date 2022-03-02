@@ -133,59 +133,58 @@ export function Resume(){
       <Header>
         <Title>Resumo por categoria</Title>
       </Header>
-      <Content 
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingHorizontal: 24,
-          paddingBottom: useBottomTabBarHeight(),
-        }}
-      >
-        {isLoading ? 
-          <LoadContainer>
-            <ActivityIndicator color={theme.colors.primary} size="large" />
-          </LoadContainer>
-        : (
-          <>
-            <MonthSelect>
-              <MounthSelectButton onPress={() => handleDateChange('prev')}>
-                <MounthSelectIcon name="chevron-left" />
-              </MounthSelectButton>
-    
-              <Mounth>{format(selectedDate, 'MMMM, yyyy', { locale: ptBR })}</Mounth>
-    
-              <MounthSelectButton onPress={() => handleDateChange('next')}>
-                <MounthSelectIcon name="chevron-right" />
-              </MounthSelectButton>
-            </MonthSelect>
-            <ChartContainer>
-              <VictoryPie
-                data={totalByCategories}
-                colorScale={totalByCategories.map(category => category.color)}
-                style={{
-                  labels: {
-                    fontSize: RFValue(18),
-                    fontWeight: 'bold',
-                    fill: theme.colors.shape
-                  }
-                }}
-                labelRadius={totalByCategories.length > 1? 50: 0.1}
-                x="percent"
-                y="total"
+      {isLoading ? 
+        <LoadContainer>
+          <ActivityIndicator color={theme.colors.primary} size="large" />
+        </LoadContainer>
+      : (
+        <Content 
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingHorizontal: 24,
+            paddingBottom: useBottomTabBarHeight(),
+          }}
+        >
+            
+          <MonthSelect>
+            <MounthSelectButton onPress={() => handleDateChange('prev')}>
+              <MounthSelectIcon name="chevron-left" />
+            </MounthSelectButton>
+  
+            <Mounth>{format(selectedDate, 'MMMM, yyyy', { locale: ptBR })}</Mounth>
+  
+            <MounthSelectButton onPress={() => handleDateChange('next')}>
+              <MounthSelectIcon name="chevron-right" />
+            </MounthSelectButton>
+          </MonthSelect>
+          <ChartContainer>
+            <VictoryPie
+              data={totalByCategories}
+              colorScale={totalByCategories.map(category => category.color)}
+              style={{
+                labels: {
+                  fontSize: RFValue(18),
+                  fontWeight: 'bold',
+                  fill: theme.colors.shape
+                }
+              }}
+              labelRadius={totalByCategories.length > 1 ? 50 : 0.1}
+              x="percent"
+              y="total"
+            />
+          </ChartContainer>
+          {
+            totalByCategories.map(item => (
+              <HistoryCard
+                key={item.key}
+                color={item.color}
+                amount={item.totalFormatted}
+                title={item.name}
               />
-            </ChartContainer>
-            {
-              totalByCategories.map(item => (
-                <HistoryCard
-                  key={item.key}
-                  color={item.color}
-                  amount={item.totalFormatted}
-                  title={item.name}
-                />
-              ))
-            }
-          </>
-        )}
-      </Content>
+            ))
+          }
+        </Content>
+      )}
     </Container>
   );
 }

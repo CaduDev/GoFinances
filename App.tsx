@@ -25,6 +25,10 @@ import 'intl';
 
 import 'intl/locale-data/jsonp/pt-BR';
 
+import { SignIn } from './src/screens/SignIn';
+
+import { AuthProvider } from './src/hooks/auth';
+
 export default function App() {
   const [fontLoaded] = useFonts({
     Poppins_400Regular,
@@ -45,7 +49,9 @@ export default function App() {
             backgroundColor="transparent"
             translucent
           />     
-          <AppRoutes />
+          <AuthProvider>
+            <SignIn />
+          </AuthProvider>
         </NavigationContainer>
       </ThemeProvider>
     </GestureHandlerRootView>
