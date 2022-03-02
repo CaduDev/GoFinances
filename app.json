@@ -3,9 +3,11 @@
     "name": "GoFinances",
     "slug": "GoFinances",
     "version": "1.0.0",
+    "schema": "GoFinances",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "GoFinances"
+  "name": "GoFinances",
+  "schema": "GoFinances"
 }

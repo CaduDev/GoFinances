@@ -2,6 +2,8 @@ import styled from 'styled-components/native';
 
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 export const Container = styled.View`
   flex: 1;
 `;
@@ -43,7 +45,7 @@ export const Footer = styled.View`
   align-items: flex-start;
 `;
 
-export const FooterWrapper = styled.View`
+export const FooterWrapper = styled(GestureHandlerRootView)`
   width: 100%;
   margin-top: ${RFPercentage(-4)}px;
   padding: 0 32px;
